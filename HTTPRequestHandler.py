@@ -41,24 +41,26 @@ class HTTPRequestHandler( BaseHTTPRequestHandler ):
     def do_GET( self ):
         o = urllib.parse.urlparse( self.path )
         path = o.path
-        #print( self.headers._headers[0][1] )
-        if True:
-            if (path.find('..')==-1):
-                if path == "/":
-                    self.ans_like_text_file( "html/index.html", "text/html" )
-                elif path[ -5: ] == ".html":
-                    self.ans_like_text_file( "html/" + path[ 1: ], "text/html" )
-                elif path[ -3: ] == ".js":
-                    self.ans_like_text_file( "js/" + path[ 1: ], "text/javascript" )
-                elif path[ -4: ] == ".css":
-                    self.ans_like_text_file( "css/" + path[ 1: ], "text/css" )
-                elif path[ -4: ] == ".ico":
-                    self.ans_like_text_file( "image/" + path[ 1: ], "image/ico" )
-                elif path[ -4: ] == ".png":
-                    self.ans_like_text_file( "image/" + path[ 1: ], "image/png" )
-                elif path[ -4: ] == ".svg":
-                    self.ans_like_text_file( "image/" + path[ 1: ], "image/svg+xml" )
-                else:
-                    self.ans_like_404()
+        if (path.find('..')==-1):
+            if path == "/":
+                self.ans_like_text_file( "html/index.html", "text/html" )
+            elif path[ -5: ] == ".html":
+                self.ans_like_text_file( "html/" + path[ 1: ], "text/html" )
+            elif path[ -3: ] == ".js":
+                self.ans_like_text_file( "js/" + path[ 1: ], "text/javascript" )
+            elif path[ -4: ] == ".css":
+                self.ans_like_text_file( "css/" + path[ 1: ], "text/css" )
+            elif path[ -4: ] == ".ico":
+                self.ans_like_text_file( "image/" + path[ 1: ], "image/ico" )
+            elif path[ -4: ] == ".png":
+                self.ans_like_text_file( "image/" + path[ 1: ], "image/png" )
+            elif path[ -4: ] == ".jpg":
+                self.ans_like_text_file( "image/" + path[ 1: ], "image/jpeg" )
+            elif path[ -5: ] == ".jpeg":
+                self.ans_like_text_file( "image/" + path[ 1: ], "image/jpeg" )
+            elif path[ -4: ] == ".svg":
+                self.ans_like_text_file( "image/" + path[ 1: ], "image/svg+xml" )
             else:
                 self.ans_like_404()
+        else:
+            self.ans_like_404()

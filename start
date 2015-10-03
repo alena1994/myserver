@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+cd /root/www/myserver
+python3.4 srvapp3.py >/dev/null 2>&1 & #
+echo "start complete"

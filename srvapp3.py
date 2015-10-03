@@ -2,7 +2,7 @@
 import datetime
 from http.server import HTTPServer
 from HTTPRequestHandler import HTTPRequestHandler
-import  sett
+import sett
 
 def run(server_class=HTTPServer, handler_class=HTTPRequestHandler):
     handler_class.server_version = "IA"
