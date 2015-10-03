@@ -51,15 +51,15 @@ class HTTPRequestHandler( BaseHTTPRequestHandler ):
             elif path[ -4: ] == ".css":
                 self.ans_like_text_file( "css/" + path[ 1: ], "text/css" )
             elif path[ -4: ] == ".ico":
-                self.ans_like_text_file( "image/" + path[ 1: ], "image/ico" )
+                self.ans_like_text_file( path[ 1: ], "image/ico" )
             elif path[ -4: ] == ".png":
-                self.ans_like_text_file( "image/" + path[ 1: ], "image/png" )
+                self.ans_like_text_file( path[ 1: ], "image/png" )
             elif path[ -4: ] == ".jpg":
-                self.ans_like_text_file( "image/" + path[ 1: ], "image/jpeg" )
+                self.ans_like_text_file( path[ 1: ], "image/jpeg" )
             elif path[ -5: ] == ".jpeg":
-                self.ans_like_text_file( "image/" + path[ 1: ], "image/jpeg" )
+                self.ans_like_text_file( path[ 1: ], "image/jpeg" )
             elif path[ -4: ] == ".svg":
-                self.ans_like_text_file( "image/" + path[ 1: ], "image/svg+xml" )
+                self.ans_like_text_file( path[ 1: ], "image/svg+xml" )
             else:
                 self.ans_like_404()
         else:
